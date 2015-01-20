@@ -2,7 +2,7 @@
 #+AUTHOR: Naoki Ueda
 #+OPTIONS: \n:t H:1 toc:nil author:nil email:nil timestamp:nil creator:nil num:t
 #+LANGUAGE: ja
-#+LaTeX_CLASS: thesis
+
 #+STARTUP: contente
 #+HTML_HEAD: <style type="text/css">body {font-family:"verdana";font-size:15px;}</style>
 #+HTML_HEAD: <style type="text/css">b {color:red;}</style>
@@ -25,6 +25,7 @@
 - 基本情報技術者
 * 自己PR
 - 学際性が好きです。
+- 研究することが好きです。今やっている研究が好きです。
 * その他アピールできるITスキル
 - OS利用経験：Windows, Mac, Linux
 - gnuplotによる数値処理
@@ -43,6 +44,8 @@
 - プログラミングなどの文書作成処理を効率よく行うため、
   テキストエディターのVimや、emacsをカスタマイズすることが好きです。
 * 選社軸、将来像、作ってみたいサービスやシステムなど
+- 色々なことをやってみたい。
+- 人や社会、人類の歴史に少しでも、少しでも貢献できるものを、ITで作りたい。
 * *話題集*
 ** 「How to become a hacker」を読んだ経験
 ** 高校生のころからオライリーなど読むのが好きで、遺伝的アルゴリズムやニューラルネットワークなどが
