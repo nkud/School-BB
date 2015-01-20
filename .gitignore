@@ -1,5 +1,7 @@
 *
 
+# ignore config
 !.gitignore
+
 !README
 !*.org
