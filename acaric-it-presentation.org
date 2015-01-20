@@ -1,0 +1,54 @@
+#+TITLE: アカリクITイベントIN東京書類構成
+#+AUTHOR: Naoki Ueda
+#+OPTIONS: \n:t H:1 toc:nil author:nil email:nil timestamp:nil creator:nil num:t
+#+LANGUAGE: ja
+#+LaTeX_CLASS: thesis
+#+STARTUP: contente
+#+HTML_HEAD: <style type="text/css">body {font-family:"verdana";font-size:15px;}</style>
+#+HTML_HEAD: <style type="text/css">b {color:red;}</style>
+#+HTML_HEAD: <script type="text/javascript"src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+#+HTML_HEAD: <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\(","\)"]] },displayAlign:"center"});</script>
+#+HTML_HEAD: <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+
+* 学業
+** 研究テーマ
+- 免疫機構の数理モデルによる数値解析
+** 研究内容
+- Agent Based Model（以下ABM） という数理モデルを使用して、数値解析を行います。
+** 研究の利点・応用・社会的意義
+- ABMを使用することによって、現実には再現不可能な実験を行うことができます。
+  私の場合は、免疫機構というミクロなモデルを作っていますが、言語学、経済学などにも
+  応用することができます。
+* 語学力
+- TOEIC 780
+* 保有資格・技術、投稿論文・学会発表など
+- 基本情報技術者
+* 自己PR
+- 学際性が好きです。
+* その他アピールできるITスキル
+- OS利用経験：Windows, Mac, Linux
+- gnuplotによる数値処理
+- Makeによる自動化
+- Gitによるバージョン管理
+* プログラミングを始めた時期
+- 中学生の時に家にあったノートパソコンで、日本語でできるプログラム言語を触ったのがきっかけです。
+  なんでも作ることが好きだったので、それをきっかけに色々な言語を学びました。
+* 研究でのプログラミング使用経験
+- ABMを作成するためにC/C++言語を使用しています。
+- 出力されたデータはpython言語で整理しています。モデルの初期条件に合わせて、gnuplot用のスクリプトも出力します。
+- モデルの実行、整理、グラフの出力までの流れは、GnuMakeで自動化させています。
+- 出力されたグラフやモデルの初期値は、HTML形式でまとまるようにしています。HTMLファイルはpythonで自動的に出力しています。
+* 研究以外でのプログラミング使用経験
+- 趣味で、ｉＰｈｏｎｅのアプリを開発しています。
+- プログラミングなどの文書作成処理を効率よく行うため、
+  テキストエディターのVimや、emacsをカスタマイズすることが好きです。
+* 選社軸、将来像、作ってみたいサービスやシステムなど
+* *話題集*
+** 「How to become a hacker」を読んだ経験
+** 高校生のころからオライリーなど読むのが好きで、遺伝的アルゴリズムやニューラルネットワークなどが
+好きだった。
+*** 数学系に入学したのは、プログラムに関しては学校で学ぶ必要がなかったため。
+それよりも根本的な数学の知識を入れたかった。
+** アイスホッケー部に入部した。
+体力を付けたかったから。自分が絶対しなさそうなことをしたかったから。
+結果、色々なことを学ぶことができた。
