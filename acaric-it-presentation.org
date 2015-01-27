@@ -1,16 +1,53 @@
 #+TITLE: アカリクITイベントIN東京書類構成
 #+AUTHOR: Naoki Ueda
-#+OPTIONS: \n:t H:2 toc:nil author:nil email:nil timestamp:nil creator:nil num:t
+#+OPTIONS: \n:t H:1 toc:nil author:nil email:nil timestamp:nil creator:nil num:t
 #+LANGUAGE: ja
 #+LaTeX_CLASS: thesis
 #+STARTUP: contente
-#+HTML_HEAD: <style type="text/css">body {font-family:"verdana";font-size:0.8em;}</style>
+#+HTML_HEAD: <style type="text/css">body {font-family:"georgia";font-size:0.8em;}</style>
 #+HTML_HEAD: <style type="text/css">b {color:red;}</style>
 #+HTML_HEAD: <script type="text/javascript"src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 #+HTML_HEAD: <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\(","\)"]] },displayAlign:"center"});</script>
 #+HTML_HEAD: <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
 
-* スライド
+* ストーリー
+** まず、私のこれまでの人生について述べようと思います。
+*** 小学校の頃は、何でも作ることが好きでした。
+**** 何でも分解することが癖で、中身がどうなっているか見るのが好きでした。
+*** そんな私が、プログラミングに初めて出会ったのは、中学生の時です。
+**** 最初は、日本語で書ける言語「ひまわり」との出会いでした。
+**** F5を押したらすぐに実行される、というあの時の感動は今でも覚えています。
+**** そこからいろんな言語を触るようになりました。
+*** 高校生になると、だんだん遺伝的アルゴリズムやニューラルネットワークなどに興味を持つようになりました。
+**** プログラミングは、自分の思ったように動きますが、
+**** しかし、だからこそ、生命など仕組みの分からないものにも興味を持ち始める。
+*** 大学では、大阪府立大学工学部数理工学に入学
+**** 自分がやらなさそうなことをしたかったので。
+***** アイスホッケー部に入りました。
+**** アイスホッケーに打ち込む傍ら空いた時間でプログラミングを独学していました。
+*** 大学院では応用数学系の研究室に入ります。
+**** 数学を色々な学問に応用する分野です。
+**** 私は、高校生の時から生命のシステムにも興味を持ち始めたので、
+**** ヒトの免疫機構をモデル化するなどして応用しています。
+**** その際にプログラミングしています。
+** 実際にプログラミングの成果物の説明をします。
+*** 研究で用いる数理モデル
+**** AgentBasedModelという数理モデルを用いてシミュレーションするためのプログラムです
+**** 主にC++を使用しています。
+**** データの整理にはPythonを使用しています。
+*** 趣味で、スマートフォンのアプリを作成しました。
+**** タスク管理アプリです。
+**** シンプルさにこだわりました。
+**** 当初の想定以上に時間がかかったので、アプリはまだ１つだけです。
+**** アップルにアクセプトされ得たのがほんの３日まえぐらい。
+** 自己PR
+*** 忍耐力が強いです。
+*** 好奇心が旺盛です。
+*** 職人気質
+** 将来について
+*** 社会に少しでも貢献したい。
+*** 道なものについて知りたい。
+* COMMENT スライド
 ** アカリクITイベント in 東京！
 大阪府立大学　工学研究科　電子・数物専攻　数理工学科
 植田　尚克
