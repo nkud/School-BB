@@ -19,8 +19,7 @@ class GroceryManager(object):
     def showTable():
         n = 0
         for g in self.grocery:
-            print 'name' %
-            (g, self.producer[n], self.stock[n], self.price[n])
+            print 'name' % (g, self.producer[n], self.stock[n], self.price[n])
 
 class SlipManager():
     def __init__(self):
