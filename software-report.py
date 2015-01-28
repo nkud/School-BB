@@ -52,6 +52,10 @@ class GroceryManager(object):
 class SlipManager(object):
     def __init__(self):
         pass
+    def createReceptionCode(self, clientdata, categorynum, grocerynum):
+        """ 受注コードを作成して返す """
+        receptioncode = "%s-%s-%s-%s-%d-%d" % (clientdata[0], clientdata[1], clientdata[2], clientdata[3], categorynum, grocerynum)
+        return receptioncode
 
 # 顧客情報を管理するクラス
 class ClientInfoManager(object):
@@ -65,7 +69,6 @@ class ClientInfoManager(object):
 
     def inputClientInformation(self):
         """ 氏名、住所、電話番号、メールアドレスを入力して、その情報を返す """
-        print ">>> 個人情報を入力してください"
         name = ''
         address = ''
         tel = ''
@@ -81,7 +84,6 @@ class ClientInfoManager(object):
             ok = raw_input(">>> OK? (y/n) ")
             if ok == 'y':
                 break
-        print ">>> 登録を完了しました。"
         return name, address, tel, mail
 
 # 入出力を管理するクラス
@@ -94,7 +96,9 @@ class ViewController(object):
     def startOrder(self):
         # 顧客情報を入力する
         print ">>> 発注を開始します。"
+        print ">>> 個人情報を入力してください"
         clientdata = self.cm.inputClientInformation()
+        print ">>> 登録を完了しました。"
         self.cm.appendNewClient(clientdata[0], clientdata[1], clientdata[2], clientdata[3])
 
         # 商品メニューを表示したあと
@@ -110,6 +114,9 @@ class ViewController(object):
         self.gm.showStockWithNumber(int(choicecategory))
         choicegrocery = raw_input(">>> 商品ナンバー: ")
         print ">>> (%s) が選択されました。" % GROCERY[int(choicecategory)][int(choicegrocery)][0]
+
+        code = self.sm.createReceptionCode(clientdata, int(choicecategory), int(choicegrocery))
+        print ">>> [受注コード] %s" % code
 
 # メイン
 if __name__ == '__main__':
