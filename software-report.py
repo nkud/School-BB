@@ -42,8 +42,11 @@ class GroceryManager(object):
     def showStockWithNumber(self, num):
         """ 在庫を表示する """
         groceries = self.grocery[num]
+        n = 0
+        print ">>> (%s) 商品一覧を表示します。" % (CATEGORY[num])
         for g in groceries:
-            print '- [商品名] %s | [価格] %s | [生産者]　%s | [在庫量] %s' % (g[0], g[1], g[2], g[3])
+            print '- [%d] 商品名: %s | 価格: %s | 生産者:　%s | 在庫量: %s' % (n, g[0], g[1], g[2], g[3])
+            n += 1
 
 # 伝票を管理するクラス
 class SlipManager(object):
@@ -61,8 +64,8 @@ class ClientInfoManager(object):
         self.client_data.append(clientdata)
 
     def inputClientInformation(self):
-        """ 氏名、住所、電話番号、メールアドレスを入力する """
-        print ">>> 登録開始"
+        """ 氏名、住所、電話番号、メールアドレスを入力して、その情報を返す """
+        print ">>> 個人情報を入力してください"
         name = ''
         address = ''
         tel = ''
@@ -72,27 +75,48 @@ class ClientInfoManager(object):
             address = raw_input("[ address ] ")
             tel = raw_input("[ tel ] ")
             mail = raw_input("[ mail ] ")
-            print '----------------'
+            print '---------------- 確認画面'
             print('- 氏名: %s\n- 住所: %s\n- 電話番号: %s\n- E-mail: %s') % (name, address, tel, mail)
             print '----------------'
-            ok = raw_input(">>> OK?(y/n) ")
+            ok = raw_input(">>> OK? (y/n) ")
             if ok == 'y':
                 break
-        self.appendNewClient(name, address, tel, mail)
-        print ">>> 登録完了"
+        print ">>> 登録を完了しました。"
+        return name, address, tel, mail
 
 # 入出力を管理するクラス
 class ViewController(object):
     def __init__(self):
-        pass
+        self.gm = GroceryManager()
+        self.sm = SlipManager()
+        self.cm = ClientInfoManager()
+
+    def startOrder(self):
+        # 顧客情報を入力する
+        print ">>> 発注を開始します。"
+        clientdata = self.cm.inputClientInformation()
+        self.cm.appendNewClient(clientdata[0], clientdata[1], clientdata[2], clientdata[3])
+
+        # 商品メニューを表示したあと
+        # 商品カテゴリーを入力する
+        print ">>> 商品カテゴリーを選択してください。"
+        self.gm.showTable()
+        choicecategory = raw_input(">>> カテゴリーナンバー: ")
+        print ">>> (%s) が選択されました。" % CATEGORY[int(choicecategory)]
+
+        # 商品リストを表示したあと
+        # 商品を選んでもらう
+        print ">>> 商品を選択してください。"
+        self.gm.showStockWithNumber(int(choicecategory))
+        choicegrocery = raw_input(">>> 商品ナンバー: ")
+        print ">>> (%s) が選択されました。" % GROCERY[int(choicecategory)][int(choicegrocery)][0]
 
 # メイン
 if __name__ == '__main__':
-    print '( バーチャルマーケットシステム )'
-    groceryManager = GroceryManager()
-    slipManager = SlipManager()
-    clientInfoManager = ClientInfoManager()
+    print '// ソフトウェア特論レポート'
+    print '// バーチャルマーケットシステム'
+    print '// 数理工学科　植田　尚克\n'
+    vc = ViewController()
 
-    groceryManager.showTable()
-    groceryManager.showStockWithNumber(0)
-    clientInfoManager.inputClientInformation()
+    # 発注を開始する
+    vc.startOrder()
