@@ -1,24 +1,29 @@
 #+TITLE: 暗号レポート
 #+AUTHOR: Naoki Ueda
-#+OPTIONS: \n:t H:1 toc:nil author:nil email:nil timestamp:nil creator:nil num:nil
+#+OPTIONS: \n:nil H:1 toc:nil author:nil email:nil timestamp:nil creator:nil num:nil
 #+LANGUAGE: ja
 #+LaTeX_CLASS: thesis
 #+STARTUP: contente
 #+HTML_HEAD: <style type="text/css">body {font-family:"times new roman";font-size:12px;}</style>
 #+HTML_HEAD: <script type="text/javascript"src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-#+HTML_HEAD: <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\(","\)"]] },displayAlign:"center"});</script>
+#+HTML_HEAD: <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: ['$','$'] },displayAlign:"center"});</script>
 #+HTML_HEAD: <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
-
+(ソースコードは、全てPythonを用いた。)
 * TODO 1問目
-- 計算量的安全性, computational security
-  暗号系が計算量的安全であるとは、その暗号系を破る最良のアルゴリズムを持っていしても、
-  実行不可能なほどの演算量が必要であるということである。
-- 証明可能安全性, provable security
-- 無条件安全性, unconditional security
-- perfect security
-* DONE 2問目
+** 計算量的安全性, computational security
+暗号系が計算量的安全であるとは、その暗号系を破る最良のアルゴリズムを持ってしても、
+実行不可能なほどの演算量が必要であるということである。
+** 証明可能安全性, provable security
+証明可能安全性とは、その暗号系に使用する数学的な証明の困難さによって、
+その暗号系の安全性を評価できるものである。
+** 無条件安全性, unconditional security
+暗号系が無条件安全性であるとは、たとえ攻撃者が無限大の、理想的な計算的資源を使用して
+暗号を解読しようと試みても、破られることはないということが保証されているということである。
+** perfect security
+* 2問目
 以下のソースコードを用いて計算した。
-(ソースコード）
+
+>>> ソースコード
 #+BEGIN_SRC
 script ="NZYRCLEFWLETZYDESPDPNCPEVPJQZCESTDNTASPCEPIETDPWPGPY"
 
@@ -35,7 +40,7 @@ for i in range(26):
 	print i, ceaser(i)
 #+END_SRC
 
-(実行結果)
+>>> 実行結果
 #+BEGIN_SRC
 0 NZYRCLEFWLETZYDESPDPNCPEVPJQZCESTDNTASPCEPIETDPWPGPY
 1 MYXQBKDEVKDSYXCDROCOMBODUOIPYBDRSCMSZROBDOHDSCOVOFOX
@@ -65,7 +70,41 @@ for i in range(26):
 25 OAZSDMFGXMFUAZEFTQEQODQFWQKRADFTUEOUBTQDFQJFUEQXQHQZ
 #+END_SRC
 * TODO 3問目
-- 
 * TODO 4問目
-* TODO 5問目
-電子透かしは、画像や音楽などのデジタルコンテンツに情報を埋め込む技術の一種である。
+** (a)
+#+BEGIN_SRC
+import random
+
+def c(a, b):
+    ret = pow(8, a)*pow(11, b)%17
+    return ret
+
+for i in range(10):
+    a = random.randint(1, 16)
+    b = random.randint(1, 16)
+    print 'a=%d, b=%d --> \t%d' % (a, b, c(a, b))
+
+#+END_SRC
+#+BEGIN_SRC
+a=13, b=4 -->   2 <--
+a=4, b=14 -->   8
+a=10, b=6 -->   2 <--
+a=12, b=7 -->   14
+a=8, b=7 -->  3
+a=1, b=14 -->   4
+a=7, b=14 -->   16
+a=7, b=12 -->   8
+a=13, b=14 -->  13
+a=16, b=14 -->  9
+#+END_SRC
+* 5問目
+電子透かしは、画像、音楽や動画などのデータに情報を埋め込む技術の一種である。
+著作権情報や、コピー回数などの情報を埋め込むことができるので、
+不正なコピーや、データの改ざんを未然に防ぐために必要になる。
+また、改ざんされた場合、その箇所も特定するためにも用いられる。
+電子透かしによって情報を埋め込まれたデータは、一見すると見ることが出来ないようになっている。
+著作権を保護する手段としては、暗号技術も用いられるが、暗号は、
+データを判読不可能なものに変更したり、転送する経路での攻撃に対処するために
+用いられるため、もとの判読可能なデータを保存した後の著作権や使用権の保護までは
+対応できない。よって、データが保存された後のセキュリティを補完するものとして、
+電子透かしは必要となる。
